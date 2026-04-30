@@ -124,6 +124,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         while(temp -> parent != NULL && temp -> parent -> right){
             temp = temp -> parent;
         }
+        temp = temp -> parent;
     }
     tree -> current = temp;
     return temp -> pair;
