@@ -121,9 +121,14 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
     }
     else{
-        temp = temp -> left;
-        while(temp -> right != NULL){
-            temp = temp -> right;
+        if(tamp -> left != NULL){
+            temp = temp -> left;
+            while(temp -> right != NULL){
+                temp = temp -> right;
+            }
+        }
+        else{
+            return NULL;
         }
     }
     return temp -> pair;
