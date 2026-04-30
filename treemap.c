@@ -121,16 +121,12 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
     }
     else{
-        if(temp -> left != NULL){
-            temp = temp -> left;
-            while(temp -> right != NULL){
-                temp = temp -> right;
-            }
-        }
-        else{
-            return NULL;
+        temp = temp -> left;
+        while(temp -> right != NULL){
+            temp = temp -> right;
         }
     }
+    tree -> current = temp;
     return temp -> pair;
     
     return NULL;
