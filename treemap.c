@@ -121,7 +121,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         }
     }
     else{
-        while(temp -> parent != NULL && temp -> parent -> right != NULL){
+        while(temp -> parent != NULL && temp == temp -> parent -> right){
             temp = temp -> parent;
         }
         temp = temp -> parent;
