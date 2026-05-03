@@ -105,10 +105,10 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         if(tree -> lower_than(current -> pair -> key, key)){
             parent -> left = newN;
         }
-    }
         else{
             parent -> right = newN;
         }
+    }
     tree -> current = newN;
 }
 
