@@ -702,3 +702,31 @@ treemap.c:183:1: error: expected identifier or ‘(’ before ‘}’ token
       | ^
 cc1: all warnings being treated as errors
 64330f7
+Sun May  3 09:45:59 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:150:9: error: expected ‘}’ before ‘else’
+  150 |         else{
+      |         ^~~~
+treemap.c:175:9: error: ‘else’ without a previous ‘if’
+  175 |         else{
+      |         ^~~~
+treemap.c: At top level:
+treemap.c:182:5: error: data definition has no type or storage class [-Werror]
+  182 |     free(node);
+      |     ^~~~
+treemap.c:182:5: error: type defaults to ‘int’ in declaration of ‘free’ [-Wimplicit-int]
+treemap.c:182:5: error: parameter names (without types) in function declaration [-Wdeclaration-missing-parameter-type]
+treemap.c:182:5: error: conflicting types for ‘free’; have ‘int()’
+In file included from test.c:2:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdlib.h:687:13: note: previous declaration of ‘free’ with type ‘void(void *)’
+  687 | extern void free (void *__ptr) __THROW;
+      |             ^~~~
+treemap.c:183:1: error: expected identifier or ‘(’ before ‘}’ token
+  183 | }
+      | ^
+cc1: all warnings being treated as errors
+f7e8e99
