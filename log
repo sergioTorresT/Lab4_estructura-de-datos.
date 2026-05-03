@@ -524,3 +524,35 @@ treemap.c:112:23: error: incompatible types when assigning to type ‘TreeNode *
       |                       ^~~~
 cc1: all warnings being treated as errors
 63ff742
+Sun May  3 09:02:04 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:99:21: error: invalid initializer
+   99 |     TreeNode newN = createTreeNode(key, value);
+      |                     ^~~~~~~~~~~~~~
+treemap.c:100:10: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+  100 |     newN -> parent = parent;
+      |          ^~
+treemap.c:101:8: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  101 |     if(parent = NULL){
+      |        ^~~~~~
+treemap.c:102:24: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+  102 |         tree -> root = newN;
+      |                        ^~~~
+treemap.c:106:30: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+  106 |             parent -> left = newN;
+      |                              ^~~~
+treemap.c:109:9: error: ‘else’ without a previous ‘if’
+  109 |         else{
+      |         ^~~~
+treemap.c:110:31: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+  110 |             parent -> right = newN;
+      |                               ^~~~
+treemap.c:112:23: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+  112 |     tree -> current = newN;
+      |                       ^~~~
+cc1: all warnings being treated as errors
+5d2e7d6
