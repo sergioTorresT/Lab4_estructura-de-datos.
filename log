@@ -307,3 +307,73 @@ treemap.c:112:23: error: ‘newNode’ undeclared (first use in this function); 
       |                       newN
 treemap.c:112:23: note: each undeclared identifier is reported only once for each function it appears in
 70178ff
+Sun May  3 08:58:13 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:83:29: error: ‘return’ with a value, in function returning void [-Wreturn-mismatch]
+   83 |     if(tree == NULL) return NULL;
+      |                             ^~~~
+treemap.c:82:6: note: declared here
+   82 | void insertTreeMap(TreeMap * tree, void* key, void * value) {
+      |      ^~~~~~~~~~~~~
+In file included from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/string.h:33,
+                 from test.c:3:
+treemap.c:84:23: error: invalid initializer
+   84 |     TreeNode parent = NULL;
+      |                       ^~~~
+treemap.c:85:33: error: ‘TreeMap’ has no member named ‘rot’; did you mean ‘root’?
+   85 |     TreeNode *current = tree -> rot;
+      |                                 ^~~
+      |                                 root
+treemap.c:87:18: error: incompatible types when assigning to type ‘TreeNode’ from type ‘TreeNode *’
+   87 |         parent = current;
+      |                  ^~~~~~~
+treemap.c:88:26: error: ‘TreeMap’ has no member named ‘pair’
+   88 |         if(is_equal(tree -> pair -> key, key)){
+      |                          ^~
+treemap.c:88:12: error: too few arguments to function ‘is_equal’
+   88 |         if(is_equal(tree -> pair -> key, key)){
+      |            ^~~~~~~~
+treemap.c:24:5: note: declared here
+   24 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+treemap.c:96:39: error: expected ‘;’ before ‘}’ token
+   96 |             current = current -> right
+      |                                       ^
+      |                                       ;
+   97 |         }
+      |         ~                              
+treemap.c:99:21: error: invalid initializer
+   99 |     TreeNode newN = createTreeNode(key, value);
+      |                     ^~~~~~~~~~~~~~
+treemap.c:100:10: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+  100 |     newN -> parent = parent;
+      |          ^~
+treemap.c:101:17: error: incompatible types when assigning to type ‘TreeNode’ from type ‘void *’
+  101 |     if(parent = NULL){
+      |                 ^~~~
+treemap.c:102:24: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+  102 |         tree -> root = newN
+      |                        ^~~~
+treemap.c:102:28: error: expected ‘;’ before ‘}’ token
+  102 |         tree -> root = newN
+      |                            ^
+      |                            ;
+  103 |     }
+      |     ~                       
+treemap.c:106:20: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+  106 |             parent -> left = newN;
+      |                    ^~
+treemap.c:109:9: error: ‘else’ without a previous ‘if’
+  109 |         else{
+      |         ^~~~
+treemap.c:110:20: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+  110 |             parent -> right = newN;
+      |                    ^~
+treemap.c:112:23: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+  112 |     tree -> current = newN;
+      |                       ^~~~
+97dba06
