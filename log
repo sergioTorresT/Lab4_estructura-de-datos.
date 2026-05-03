@@ -153,3 +153,55 @@ Sun May  3 08:12:34 PM UTC 2026:
  tests:  11|5
 total_score: 20/60
 9ec39ef
+Sun May  3 08:27:23 PM UTC 2026: 
+ treemap.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+Compilation failed
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:59:8: error: ‘map’ undeclared (first use in this function)
+   59 |     if(map == NULL) return NULL;
+      |        ^~~
+treemap.c:59:8: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:60:24: error: invalid initializer
+   60 |     TreeNode current = tree -> root;
+      |                        ^~~~
+treemap.c:61:19: error: invalid operands to binary != (have ‘TreeNode’ and ‘void *’)
+   61 |     while(current != NULL){
+      |                   ^~
+treemap.c:62:12: error: the address of ‘is_equal’ will always evaluate as ‘true’ [-Werror=address]
+   62 |         if(is_equal tree, current -> pair -> key, key)){
+      |            ^~~~~~~~
+treemap.c:62:20: error: expected ‘)’ before ‘tree’
+   62 |         if(is_equal tree, current -> pair -> key, key)){
+      |           ~        ^~~~~
+      |                    )
+treemap.c:62:55: error: expected statement before ‘)’ token
+   62 |         if(is_equal tree, current -> pair -> key, key)){
+      |                                                       ^
+treemap.c:62:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   62 |         if(is_equal tree, current -> pair -> key, key)){
+      |         ^~
+treemap.c:62:56: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   62 |         if(is_equal tree, current -> pair -> key, key)){
+      |                                                        ^
+treemap.c:63:31: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+   63 |             tree -> current = current;
+      |                               ^~~~~~~
+treemap.c:64:28: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   64 |             return current -> pair;
+      |                            ^~
+treemap.c:66:12: error: implicit declaration of function ‘lower_tham’ [-Wimplicit-function-declaration]
+   66 |         if(lower_tham(key, current -> pair -> key)){
+      |            ^~~~~~~~~~
+treemap.c:66:36: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   66 |         if(lower_tham(key, current -> pair -> key)){
+      |                                    ^~
+treemap.c:67:31: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   67 |             current = current -> left;
+      |                               ^~
+treemap.c:70:31: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   70 |             current = current -> right;
+      |                               ^~
+cc1: all warnings being treated as errors
+0499d71
