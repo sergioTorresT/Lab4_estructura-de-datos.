@@ -229,3 +229,9 @@ treemap.c:66:12: error: implicit declaration of function ‘lower_than’ [-Wimp
    66 |         if(lower_than(key, current -> pair -> key)){
       |            ^~~~~~~~~~
 c51621e
+Sun May  3 08:28:43 PM UTC 2026: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  18|4
+total_score: 30/60
+1499ec5
